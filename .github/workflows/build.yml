@@ -5,7 +5,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-14, windows-2022]
+        os: ${{ fromJSON(github.event_name == 'push' && contains(github.event.head_commit.message, '[macos-only]') && '["macos-15"]' || '["macos-15","windows-2022"]') }}
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
