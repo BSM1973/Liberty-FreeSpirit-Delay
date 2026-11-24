@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
-project(FreeSpiritDelay VERSION 0.1.0 LANGUAGES CXX C)
+project(FreeSpiritDelay VERSION 0.2.0 LANGUAGES CXX C)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 option(FSD_CORE_ONLY "Build DSP tests without JUCE" OFF)
