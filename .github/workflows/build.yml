@@ -1,0 +1,24 @@
+name: FreeSpirit Delay builds
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-14, windows-2022]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure macOS ARM64
+        if: runner.os == 'macOS'
+        run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_OSX_ARCHITECTURES=arm64
+      - name: Configure Windows x64
+        if: runner.os == 'Windows'
+        run: cmake -S . -B build -A x64
+      - run: cmake --build build --config Release --parallel 3
+      - run: ctest --test-dir build -C Release --output-on-failure
+      - uses: actions/upload-artifact@v4
+        with:
+          name: FreeSpirit-Delay-${{ matrix.os }}
+          path: build/FreeSpiritDelay_artefacts/Release/
+          if-no-files-found: error

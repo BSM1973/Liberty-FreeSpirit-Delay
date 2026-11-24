@@ -1,0 +1,13 @@
+Mode 0 finite, bounded, audible tail
+Mode 1 finite, bounded, audible tail
+Mode 2 finite, bounded, audible tail
+Mode 3 finite, bounded, audible tail
+Mode 4 finite, bounded, audible tail
+Mode 5 finite, bounded, audible tail
+Mode 6 finite, bounded, audible tail
+Mode 7 finite, bounded, audible tail
+Mode 8 finite, bounded, audible tail
+Mode 9 finite, bounded, audible tail
+Mode 10 finite, bounded, audible tail
+Mode 11 finite, bounded, audible tail
+PASS: timing, bypass, 12 engines, safety, hold, clear
